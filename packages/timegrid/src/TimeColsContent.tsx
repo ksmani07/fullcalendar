@@ -10,12 +10,21 @@ import {
   memoize,
   DateRange,
   NowIndicatorRoot,
-  DateProfile
+  DateProfile,
+  Dictionary
 } from '@fullcalendar/common'
-import { TableCellModel } from '@fullcalendar/daygrid' // TODO: good to use this interface?
+//import { TableCellModel } from '@fullcalendar/daygrid' // TODO: good to use this interface?
 import { TimeColsSeg, splitSegsByCol, splitInteractionByCol } from './TimeColsSeg'
 import { TimeColsSlatsCoords } from './TimeColsSlatsCoords'
 import { TimeCol } from './TimeCol'
+
+interface TableCellModel {
+  key: string;
+  date: DateMarker;
+  extraHookProps?: Dictionary;
+  extraDataAttrs?: Dictionary;
+  extraClassNames?: string[];
+}
 
 
 export interface TimeColsContentProps {
